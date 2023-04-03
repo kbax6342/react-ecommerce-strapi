@@ -12,6 +12,7 @@ import Cart from '../Cart/Cart';
 
 const Navbar = () => {
   const [open, setopen] = useState(false)
+  const products = useSelector(state => state.cart.products)
   return (
     <div className='navbar flex w-full'>
       <div className='wrapper flex w-full justify-between'>
@@ -67,7 +68,7 @@ const Navbar = () => {
                 <div className="cartIcon" onClick={(e) => setopen(!open)}>
                 <ShoppingCartOutlinedIcon/>
                 
-                <span>0</span>
+                <span>{products.length}</span>
                 </div>
           </div>
         </div>
